@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* header */
+.top {
+    text-align: center;
+    padding: 16px 8px;
+    background-color: #f5f5f5;
+    color: #dd0031;
+    position: relative;
+}
+.top p {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 900;
+    width: 95%;
+    margin: auto;
+}
+.top i {
+    font-size: 24px;
+    font-weight: 1000;
+    position: absolute;
+    right: 2%;
+    top: 30%;
+    margin: 0;
+}
+.navbar {
+    color: #dd0031;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+.navbar>div {
+    display: flex;
+    align-items: center;
+}
+.navbar>div>img {
+    height: 50px;
+    cursor: pointer;
+}
+.navbar>div>p {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.navbar>div>p:hover {
+    text-decoration: underline;
+}
+.navbar>div:first-child>p {
+    border-left: 1px solid rgba(130, 25, 25, 0.8);
+}
+.navbar>div>p>i {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin: auto 6px;
+    font-size: 20px;
+}
+.navbar>div>h2 {
+    font-size: 13px;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+.navbar>div>h2:hover {
+    text-decoration: underline;
+}
+.navbar>div:last-child>p {
+    margin: auto 8px;
+}
+.navbar>div:last-child>p>a {
+    padding: 0px 8px;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    color: #dd0031;
+    font-weight: 1000;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.navbar>div:last-child>p:first-child:hover {
+    text-decoration: underline;
+}
+.navbar>div:last-child>p>a:hover {
+    text-decoration: underline;
+}
+.navbar>div:last-child>button {
+    font-size: 13px;
+    margin: auto 10px;
+    padding: 8px 14px;
+    color: #fff;
+    background: linear-gradient(-180deg,rgba(254,67,108,.99),rgba(221,0,49,.99) 49%,#c20726);
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+}
+.navbar>div:last-child>button:hover {
+    background: linear-gradient(-180deg,rgba(221,0,49,.99) 49%,#c20726,rgba(254,67,108,.99));
+}
+.dropdown {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    top:60px;
+    left: 0%;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+.dropdown h2 {
+    font-size: 13px;
+    padding: 20px 30px;
+    cursor: pointer;
+}
+.dropdown h2:hover {
+    text-decoration: underline;
+}
+.navbar>div>h2:hover>div {
+    display: flex;
+}
+
+/* footer */
+.footimg {
+    overflow: hidden;
+    object-fit: cover;
+} 
+.footimg img {
+    height: 500px;
+    width: 100%;
+}
+.footcontent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.footcontent h2:hover {
+    text-decoration: underline;
+}
+.footcontent .f1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footcontent .f2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footcontent .f2:first-child {
+    color: #dd0031;
+}
+.footcontent h2 {
+    font-size: 10px;
+    margin: 2px 8px;
+}
+.footcontent i {
+    font-size: 20px;
+    color: #dd0031;
+    margin: auto 4px;
+    cursor: pointer;
+}
+.footcontent i:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease-in-out;
+}
