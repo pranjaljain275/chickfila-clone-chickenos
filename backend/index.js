@@ -3,16 +3,21 @@ require("dotenv").config();
 const cors = require("cors");
 
 const { connection } = require("./config/db");
-const { authenticator } = require("./middlewares/authenticator");
+// const { userAuthenticator } = require("./middlewares/userAuthenticator");
+// const { adminAuthenticator } = require("./middlewares/adminAuthenticator");
 const { mealRouter } = require("./routes/meal.route");
 const { userRouter } = require("./routes/user.route");
+const { employeeRouter } = require("./routes/admin.route");
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use("/users", userRouter);
-app.use(authenticator);
+app.use("/employees", employeeRouter);
+// app.use(adminAuthenticator);
 app.use("/meals", mealRouter);
+// app.use(userAuthenticator);
 
 app.get("/", (req, res) => {
   res.send("WELCOME to CHICKENOS");

@@ -29,6 +29,11 @@ main {
     font-size: 14px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 #container label {
     margin: 10px 0;
     font-size: 14px;
@@ -41,18 +46,18 @@ main {
     font-size: 14px;
 }
 
-#container #div2 {
+#div2 {
     line-height: 1.5rem;
-    margin: 10px 0;
+    margin: 20px 0;
     opacity: 0.9;
     font-size: 14px;
 }
-#container #div2 a {
+#div2 a {
     text-decoration: underline;
     color: #dd0031;
 }
 
-#container button {
+#signup-btn {
     padding: 12px 20px;
     font-size: 14px;
     font-weight: 600;
@@ -62,6 +67,6 @@ main {
     margin: 10px 0;
 }
 
-#container button:hover {
+#signup-btn:hover {
     opacity: 0.7;
 }

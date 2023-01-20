@@ -1,3 +1,4 @@
+const { response } = require("express");
 const express = require("express");
 
 const { Mealmodel } = require("../models/meal.model");
@@ -7,7 +8,12 @@ const mealRouter = express.Router();
 // add meal
 mealRouter.post("/create", async (req, res) => {
   try {
-
+    const data = req.body;
+    // console.log(data);
+    // const meals = new Mealmodel(data);
+    // await meals.save();
+    const meals = await Mealmodel.insertMany(data);
+    response.send(meals);
   } catch (error) {
     console.log(error);
     res.send({ err: "Something went wrong" });
@@ -17,7 +23,8 @@ mealRouter.post("/create", async (req, res) => {
 // all meal
 mealRouter.get("/", async (req, res) => {
   try {
-
+    const meal = await Mealmodel.find();
+    res.send(meal);
   } catch (error) {
     console.log(error);
     res.send({ err: "Something went wrong" });

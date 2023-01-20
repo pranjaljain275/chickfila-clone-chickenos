@@ -5,8 +5,8 @@ const mealSchema = mongoose.Schema(
     image: String,
     name: String,
     quantity: String,
-    price: String,
-    userId: String
+    price: Number,
+    // empId: String
   },
   {
     versionKey: false,

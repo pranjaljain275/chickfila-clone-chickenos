@@ -17,43 +17,35 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>Create Account</title>
+    <title>Login Account</title>
     <link rel="stylesheet" href="style/header-footer.css" />
     <link rel="stylesheet" href="style/signup.css" />
     <script src="script/header-footer.js" defer></script>
-    <script src="script/signup.js" defer></script>
+    <script src="script/emplogin.js" defer></script>
   </head>
   <body>
     <header></header>
 
     <main>
       <div id="container">
-        <h2>Create Account</h2>
+        <h2>Employeer Login</h2>
 
         <div id="div1">
-          <p>Checkout faster</p>
-          <p>Track orders Easily</p>
-          <p>Use one sign-in across our brands</p>
-          <p><span style="color: red">*</span>Required</p>
+          <p>Enter your Employee ID to get started.</p>
         </div>
 
-        <form id="signup_form" action="">
-          <label>Name<span style="color: red">*</span></label>
-          <input type="text" id="name" required />
-          <label for="email">Email<span style="color: red">*</span></label>
-          <input type="email" id="email" required />
-          <label>Phone Number<span style="color: red">*</span></label>
-          <input type="text" id="phone" required />
-          <label>Create password<span style="color: red">*</span></label>
+        <form id="emp_login_form" action="">
+          <label>Employee ID</label>
+          <input type="text" id="empId" required />
+          <label>Password</label>
           <input type="password" id="password" required />
           <div id="div2">
             <p>
-              By creating an account, you agree to our
-              <a href="#">Privacy Policy</a>and
+              By tapping Next, you agree to our <a href="#">Privacy Policy</a> &
               <a href="#">Terms & Conditions</a>.
             </p>
           </div>
-          <input type="submit" id="signup-btn" value="Create Account" />
+          <input type="submit" id="signup-btn" value="Login" />
         </form>
       </div>
     </main>
