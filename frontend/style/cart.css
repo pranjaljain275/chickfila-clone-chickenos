@@ -1,0 +1,141 @@
+main {
+    width: 70%;
+    margin: auto;
+}
+#container div{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.2) 3px 0 3px 0;
+    text-align: center;
+    align-items: center;
+    margin: 30px 0;
+    padding: 0 30px;
+}
+#container div h2 {
+    font-size: 20px;
+}
+#container div p {
+    font-size: 16px;
+}
+#container div img{
+    width: 15%;
+}
+#container div button {
+    padding: 6px 12px;
+    background-color: black;
+    color: white;
+    transition: 0.25s;
+    border: none;
+}
+#container div button:hover {
+    opacity: 0.9;
+    border-radius: 4px;
+    background-color: rgb(146, 16, 16);
+}
+#delivery,#bag,#amounttotal {
+    margin-top: 30px;
+}
+#bag h1 {
+    font-size: 28px;
+    margin: 12px;
+    letter-spacing: 1px;
+    font-weight: 1000;
+    opacity: 0.8;
+    margin-left: 20px;
+    color: #dd0031;
+}
+#bag p {
+    font-size: 16px;
+    margin: 12px;
+    letter-spacing: 0.3px;
+    font-weight: 200;
+    opacity: 0.8;
+    margin-left: 20px;
+}
+#bag p:last-child {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+}
+#delivery h1{
+    font-size: 18px;
+    margin: 12px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-left: 20px;
+}
+#delivery p {
+    font-size: 16px;
+    margin: 12px;
+    letter-spacing: 0.3px;
+    font-weight: 200;
+    opacity: 0.8;
+    margin-left: 20px;
+}
+#delivery span {
+    color: #dd0031;
+    font-size: 18px;
+    opacity: 1;
+    font-weight: 1000;
+    cursor: pointer;
+}
+#amounttotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#amounttotal div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#amounttotal div h1 {
+    margin: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+#amounttotal div h1 span{
+    margin: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+#amounttotal div button {
+    margin: 20px;
+    padding: 16px 12px;
+    background: linear-gradient(-180deg,rgba(254,67,108,.99),rgba(221,0,49,.99) 49%,#c20726);
+    color: white;
+    border: none;
+    font-size:16px;
+}
+#amounttotal div button:hover {
+    background: linear-gradient(-180deg,rgba(221,0,49,.99) 49%,#c20726,rgba(254,67,108,.99));
+}
+#amounttotal p {
+    margin: 12px;
+    margin-left: 20px;
+}
+#amounttotal p a {
+    color: #dd0031;
+}
+#amounttotal p a:hover {
+    text-decoration: underline;
+}
+#quant {
+    display: flex;
+    justify-content: space-between;
+}
+#quant span{
+    margin: 20px 0;
+    width: 40px;
+    font-size: 14px;
+}
+#quant h2{
+    margin: 16px 0;
+    font-size: 20px;
+}
+main {
+    margin: 50px auto;
+}

@@ -17,36 +17,41 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>Login Account</title>
+    <title>Cart Page</title>
     <link rel="stylesheet" href="style/header-footer.css" />
-    <link rel="stylesheet" href="style/signup.css" />
     <script src="script/header-footer.js" defer></script>
-    <script src="script/login.js" defer></script>
+    <link rel="stylesheet" href="style/cart.css">
+    <script src="script/cart.js" defer></script>
   </head>
   <body>
     <header></header>
 
     <main>
-      <div id="container">
-        <h2>Sign In | Create Account</h2>
-
-        <div id="div1">
-          <p>Enter your email to get started.</p>
+      <div id="bag">
+        <h1>My Cart</h1>
+        <p>Items in your cart are not on hold.</p>
+      </div>
+      <hr />
+      <div id="delivery">
+        <h1>
+          Delivery (<span id="totalItem">1</span> Items) to <span>Your Location</span>
+        </h1>
+        <p>Order at your location</p>
+      </div>
+      <hr />
+      <div id="container"></div>
+      <hr />
+      <div id="amounttotal">
+        <div>
+          <p>Accepted Payment Methods</p>
+          <p>STILL HAVE A QUESTION? Call 1.888.282.6060 or <a href="#">chat with us</a></p>
+          <p><a href="">Order Anywhere?</a></p>
         </div>
-
-        <form id="login_form" action="">
-          <label>Email</label>
-          <input type="email" id="email" required />
-          <label>Password</label>
-          <input type="password" id="password" required />
-          <div id="div2">
-            <p>
-              By tapping Next, you agree to our <a href="#">Privacy Policy</a> &
-              <a href="#">Terms & Conditions</a>.
-            </p>
-          </div>
-          <input type="submit" id="signup-btn" value="Login" />
-        </form>
+        <div>
+          <h1>TOTAL PRICE:<span id="amount">0</span></h1>
+          <hr />
+          <button id="checkout">Check Out</button>
+        </div>
       </div>
     </main>
 

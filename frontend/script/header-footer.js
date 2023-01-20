@@ -22,7 +22,7 @@ header.innerHTML = `
     <h2>
       Menu
       <div class="dropdown">
-        <h2><a href="#">Breakfast</a></h2>
+        <h2><a href="breakfast.html">Breakfast</a></h2>
         <h2><a>Entrées</a></h2>
         <h2><a>Salads</a></h2>
         <h2><a>Sides</a></h2>
@@ -68,9 +68,9 @@ header.innerHTML = `
   </div>
 
   <div>
-    <p>Chickenos One</p>
-    <p><a href="signup.html">Sign Up</a></p>
-    <button>Order food</button>
+    <p><a id="signname" href="signup.html">Sign Up</a></p>
+    <p><a id="signname" href="emplogin.html">Employeer Login</a></p>
+    <button id="cart">Order food</button>
     <p><i class="fa-solid fa-magnifying-glass"></i></p>
   </div>
 </div>
@@ -147,3 +147,14 @@ document.querySelector(".top>i").addEventListener("click", () => {
   let topbar = document.querySelector(".top");
   topbar.style.display = "none";
 });
+
+// Sign username
+let username = localStorage.getItem("name") || "Sign Up";
+let signuser = document.getElementById("signname");
+signuser.innerText = username;
+
+// Cart Page
+let cartPage = document.getElementById("cart");
+cartPage.addEventListener("click", ()=> {
+  window.location.href = "cart.html";
+})

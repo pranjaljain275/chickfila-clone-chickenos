@@ -27,7 +27,7 @@ userRouter.post("/signup", async (req, res) => {
 
     const saltRounds = 10;
     const salt = await bcrypt.genSalt(saltRounds);
-    await bcrypt.hash(user.password, salt);
+    user.password = await bcrypt.hash(user.password, salt);
 
     await user.save();
     

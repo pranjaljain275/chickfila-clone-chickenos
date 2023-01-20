@@ -1,13 +1,15 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-const authenticator = (req, res, next) => {
+const adminAuthenticator = (req, res, next) => {
   const token = req.headers.authorization;
   if (token) {
-    const decoded = jwt.verify(token, process.env.key1);
+    console.log(token);
+    const decoded = jwt.verify(token, process.env.key2);
+    console.log(decoded);
     if (decoded) {
-      const userId = decoded.userId;
-      req.body.userId = userId;
+      // const empId = decoded.employeeId;
+      // req.body.empId = empId;
       next();
     } else {
       res.send("Login First");
@@ -18,5 +20,5 @@ const authenticator = (req, res, next) => {
 };
 
 module.exports = {
-  authenticator,
+  adminAuthenticator,
 };
