@@ -4,9 +4,7 @@ require("dotenv").config();
 const adminAuthenticator = (req, res, next) => {
   const token = req.headers.authorization;
   if (token) {
-    console.log(token);
     const decoded = jwt.verify(token, process.env.key2);
-    console.log(decoded);
     if (decoded) {
       // const empId = decoded.employeeId;
       // req.body.empId = empId;
