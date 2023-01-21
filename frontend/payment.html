@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="style/header-footer.css" />
+    <link rel="stylesheet" href="style/payment.css" />
+    <script src="script/header-footer.js" defer></script>
+    <script src="script/payment.js" defer></script>
+  </head>
+  
+  <body>
+    <header></header>
+
+    <div class="otp">
+      <div>
+        <form action="">
+          <label for="">OTP :-</label>
+          <input
+            type="text"
+            name=""
+            id="onetime"
+            required
+            maxlength="4"
+            minlength="4"
+            placeholder="Enter OTP"
+          />
+          <input type="submit" id="btn" value="Confirm" />
+        </form>
+        <a class="close" href="#"><i class="fa fa-close"></i></a>
+      </div>
+    </div>
+    <div class="logobag">
+      <a href="index.html"><img src="image/FITs WELL2.jpg" alt="" /></a>
+      <a href="cart.html"><img src="image/emptybag-icon.png" alt="" /></a>
+    </div>
+    <section>
+      <hr />
+      <div class="top">
+        <p>
+          <span><i class="fa fa-lock"></i>Secure Checkout</span>powered by
+          Borderfree
+        </p>
+        <p>Already have a Borderfree account? Click here.</p>
+      </div>
+      <hr />
+      <div class="address">
+        <h1>Delivery</h1>
+        <div>
+          <div>
+            DELIVERY ADDRESS:<br />
+            PRANJAL JAIN<br />
+            ADARSH NAGAR<br />
+            AKLERA, RAJASTHAN 326033<br />
+            INDIA<br />
+          </div>
+          <div>
+            DELIVERY METHOD:<br />
+            STANDARD<br />
+            NO ADDITIONAL IMPORT CHARGES AT DELIVERY<br />
+            30-60 Minutes DeliveryS<br />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="payment">
+        <h1>Payment: Rs <span id="paymenttotal"></span></h1>
+        <p>Credit or Debit Card</p>
+        <input type="checkbox" />
+        <label for=""
+          >My billing address is the same as my delivery address</label
+        >
+        <div>
+          <input type="text" id="cardnum" placeholder="Card Number" />
+          <div>
+            <input type="text" id="date" placeholder="MM / YY" />
+            <input type="text" id="cvv" placeholder="Security Codes" />
+          </div>
+        </div>
+        <br />
+        <button id="pay">Payment</button>
+      </div>
+      <div class="btm">
+        This order total is 100% guaranteed. There will be no additional charges
+        due upon receipt.
+      </div>
+    </section>
+    <footer></footer>
+
+  </body>
+</html>

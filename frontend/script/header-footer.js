@@ -69,7 +69,7 @@ header.innerHTML = `
 
   <div>
     <p><a id="signname" href="signup.html">Sign Up</a></p>
-    <p><a id="signname" href="emplogin.html">Employeer Login</a></p>
+    <p><a id="signadmin" href="admin.html">Employeer Login</a></p>
     <button id="cart">Order food</button>
     <p><i class="fa-solid fa-magnifying-glass"></i></p>
   </div>
@@ -148,13 +148,18 @@ document.querySelector(".top>i").addEventListener("click", () => {
   topbar.style.display = "none";
 });
 
-// Sign username
-let username = localStorage.getItem("name") || "Sign Up";
+//Logged name
+let username = localStorage.getItem("loginname") || "Sign Up";
 let signuser = document.getElementById("signname");
 signuser.innerText = username;
+
+//Logged name
+let empusername = localStorage.getItem("emploginname") || "Employeer Login";
+let signemp = document.getElementById("signadmin");
+signemp.innerText = empusername;
 
 // Cart Page
 let cartPage = document.getElementById("cart");
 cartPage.addEventListener("click", ()=> {
   window.location.href = "cart.html";
-})
+});

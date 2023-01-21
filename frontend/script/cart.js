@@ -8,7 +8,6 @@ localStorage.setItem("amount", totalPrice);
 
 let totalItem = +cartData.length;
 document.querySelector("#totalItem").textContent = totalItem;
-// document.querySelector(".itemCart").textContent = totalItem;
 
 function mealData(cartData) {
   document.querySelector("#container").innerHTML = null;
@@ -82,19 +81,10 @@ function deleteCart(elem, price, index) {
 
   totalItem--;
   document.querySelector("#totalItem").textContent = totalItem;
-//   document.querySelector(".itemCart").textContent = totalItem;
 
   mealData(cartData);
 }
 
-// document.getElementById("checkout").addEventListener("click", () => {
-//   window.location.href = "payment.html";
-// });
-
-//logged name
-let accData = JSON.parse(localStorage.getItem("accdata")) || [];
-console.log(accData);
-
-if (accData[0] != undefined) {
-  document.querySelector("#logged").textContent = `HI! ${accData[0].fname}`;
-}
+document.getElementById("checkout").addEventListener("click", () => {
+  window.location.href = "payment.html";
+});

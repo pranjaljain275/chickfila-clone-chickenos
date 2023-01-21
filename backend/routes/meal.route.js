@@ -9,11 +9,10 @@ const mealRouter = express.Router();
 mealRouter.post("/create", async (req, res) => {
   try {
     const data = req.body;
-    // console.log(data);
-    // const meals = new Mealmodel(data);
-    // await meals.save();
-    const meals = await Mealmodel.insertMany(data);
+    const meals = new Mealmodel(data);
+    await meals.save();
     response.send(meals);
+    console.log("Meal Added");
   } catch (error) {
     console.log(error);
     res.send({ err: "Something went wrong" });
@@ -23,8 +22,17 @@ mealRouter.post("/create", async (req, res) => {
 // all meal
 mealRouter.get("/", async (req, res) => {
   try {
-    const meal = await Mealmodel.find();
-    res.send(meal);
+    let { name, limit, page } = req.query;
+    let queries = {};
+    if (name == undefined) {
+      queries = {};
+    } else {
+      queries.name = { '$regex': name, '$options': 'i' };
+    }
+    // pagination
+    let pageNo = (page - 1) * limit;
+    const movies = await Mealmodel.find(queries).skip(pageNo).limit(limit);
+    res.send(movies);
   } catch (error) {
     console.log(error);
     res.send({ err: "Something went wrong" });
@@ -34,7 +42,9 @@ mealRouter.get("/", async (req, res) => {
 // particular meal
 mealRouter.get("/:id", async (req, res) => {
   try {
-
+    let ID = req.params.id;
+    let data = await Mealmodel.find({_id: ID});
+    res.send(data);
   } catch (error) {
     console.log(error);
     res.send({ err: "Something went wrong" });
@@ -42,9 +52,12 @@ mealRouter.get("/:id", async (req, res) => {
 });
 
 // update meal
-mealRouter.patch("/update/:id", async (req, res) => {
+mealRouter.patch("/:id", async (req, res) => {
   try {
-
+    let ID = req.params.id;
+    let updateTo = req.body;
+    let data = await Mealmodel.findByIdAndUpdate({_id: ID}, updateTo);
+    res.send(`Data of a user whose Id ${ID} is updated`);
   } catch (error) {
     console.log(error);
     res.send({ err: "Something went wrong" });
@@ -52,9 +65,11 @@ mealRouter.patch("/update/:id", async (req, res) => {
 });
 
 // delete meal
-mealRouter.delete("/delete/:id", async (req, res) => {
+mealRouter.delete("/:id", async (req, res) => {
   try {
-
+    let ID = req.params.id;
+    let data = await Mealmodel.findByIdAndDelete({_id: ID});
+    res.send(`Data of a user whose Id ${ID} is deleted`);
   } catch (error) {
     console.log(error);
     res.send({ err: "Something went wrong" });

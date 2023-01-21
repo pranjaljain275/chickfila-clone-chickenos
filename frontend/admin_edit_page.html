@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Chickenos/Edit data</title>
+    <link rel="stylesheet" href="style/dashboard.css" />
+    <script src="script/admin_edit_page.js" defer></script>
+  </head>
+  <body id="bdy_edit_pge">
+    <div class="topnav" id="myTopnav">
+      <a href="dashboard.html" class="active"
+        ><img src="images/CHICKENOS logo.jpeg" alt=""
+      /></a>
+
+      <a href="dashboard.html" class="content">Administrative</a>
+      <a href="#news" class="content">Term of Use</a>
+      <a href="index.html" class="content">Visit Our Website</a>
+      <a
+        href="javascript:void(0);"
+        style="font-size: 15px"
+        class="icon"
+        onclick="myFunction()"
+        >&#9776;</a
+      >
+    </div>
+    <div id="edit_bar">
+      <button id="edit_pge_btn"></button>
+    </div>
+
+    <div class="form_of_editing">
+      <form id="edit_form">
+        <div id="inside_form">
+          <div class="comp_data" id="comp_nme">
+            <label for="compmyName">Product Name : </label>
+            <input
+              type="text"
+              id="company_name"
+              placeholder="Enter product name here..."
+              required
+            />
+          </div>
+          <div class="comp_data" id="comp_lgo">
+            <label for="companylogo">URL of Image : </label>
+            <input
+              type="text"
+              id="company-logo"
+              placeholder="Enter URL of image here..."
+              required
+            />
+          </div>
+          <div class="comp_data" id="job_rle">
+            <label for="jobrole">Quantity : </label>
+            <input
+              type="text"
+              id="company_job_role"
+              placeholder="Enter Quantity here..."
+              required
+            />
+          </div>
+        </div>
+        <div class="submit_btn">
+          <div class="cancel_btn">
+            <button id="cancel"><a href="dashboard.html"> Cancel</a></button>
+          </div>
+          <div class="save_btn">
+            <button id="save">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
