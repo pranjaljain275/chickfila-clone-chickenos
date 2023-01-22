@@ -48,6 +48,15 @@ if (dataId == null) {
          required
        />
      </div>
+     <div class="comp_data" id="job_rle">
+       <label for="jobrole">Price : </label>
+       <input
+         type="text"
+         id="company_price"
+         placeholder="Enter Price here..."
+         required
+       />
+     </div>
    </div>
    <div class="submit_btn">
      <div class="cancel_btn">
@@ -65,10 +74,12 @@ if (dataId == null) {
     let product_name = document.querySelector("#company_name");
     let prod_logo = document.querySelector("#company-logo");
     let quantity = document.querySelector("#company_job_role");
+    let price = document.querySelector("#company_price");
     let obj = {
       name: product_name.value,
       image: prod_logo.value,
       quantity: quantity.value,
+      price: price.value,
     };
     addtoserver(obj);
   });
@@ -86,6 +97,7 @@ async function addtoserver(obj) {
     });
     if (add_data.ok) {
       alert("Data Added Successfully");
+      window.location.href = "dashboard.html";
     } else {
       alert("Data not added.\nPlease Try Again");
     }
@@ -127,6 +139,9 @@ function showdata(data) {
   let crole = document.querySelector("#company_job_role");
   crole.value = data["quantity"];
   crole.readOnly = true;
+  let cprice = document.querySelector("#company_price");
+  cprice.value = data["price"];
+  cprice.readOnly = true;
 }
 
 let temp_data = document.querySelector("#edit_pge_btn");
@@ -139,6 +154,8 @@ if (dataId != null) {
     clogo.readOnly = false;
     let crole = document.querySelector("#company_job_role");
     crole.readOnly = false;
+    let cprice = document.querySelector("#company_price");
+    cprice.readOnly = false;
   });
 }
 
@@ -155,9 +172,12 @@ if (dataId != null) {
     data["image"] = clogo.value;
     let crole = document.querySelector("#company_job_role");
     data["quantity"] = crole.value;
+    let cprice = document.querySelector("#company_price");
+    data["price"] = cprice.value;
     cname.readOnly = true;
     clogo.readOnly = true;
     crole.readOnly = true;
+    cprice.readOnly = true;
     finalData(data);
   });
 }

@@ -30,7 +30,7 @@ async function mealData(page_limit = 5, page_num = 1) {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `${accesstokenAdmin}`,
+          // Authorization: `${accesstokenAdmin}`,
         },
       }
     );
@@ -81,6 +81,9 @@ function renderMeal(data) {
         <div class="job_role">
             <h4>Product Quantity</h4>
         </div>
+        <div class="job_role">
+            <h4>Product Price</h4>
+        </div>
         <div class="Edit_sec">
             <h4>Edit Data</h4>
         </div>
@@ -102,13 +105,15 @@ function renderMeal(data) {
         <div class="job_role">
             <h4>${item.quantity}</h4>
         </div>
+        <div class="job_role">
+            <h4>${item.price}</h4>
+        </div>
         <div class="Edit_sec">
             <button class="edt_btn" data-id=${item._id}>Edit Data</button>
         </div>
         <div class="delet_sec">
             <button class="dlt_btn" data-id=${item._id}>Delete Data</button>
         </div>
-        
     </div>
     `;
   });
@@ -200,7 +205,7 @@ async function searchMeal(data) {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `${accesstokenAdmin}`,
+        // Authorization: `${accesstokenAdmin}`,
       },
     });
     if (showdata.ok) {

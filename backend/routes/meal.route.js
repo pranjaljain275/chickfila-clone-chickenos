@@ -1,12 +1,13 @@
 const { response } = require("express");
 const express = require("express");
+const { adminAuthenticator } = require("../middlewares/adminAuthenticator");
 
 const { Mealmodel } = require("../models/meal.model");
 
 const mealRouter = express.Router();
 
 // add meal
-mealRouter.post("/create", async (req, res) => {
+mealRouter.post("/create", adminAuthenticator, async (req, res) => {
   try {
     const data = req.body;
     const meals = new Mealmodel(data);
@@ -52,7 +53,7 @@ mealRouter.get("/:id", async (req, res) => {
 });
 
 // update meal
-mealRouter.patch("/:id", async (req, res) => {
+mealRouter.put("/:id", adminAuthenticator, async (req, res) => {
   try {
     let ID = req.params.id;
     let updateTo = req.body;
@@ -65,7 +66,7 @@ mealRouter.patch("/:id", async (req, res) => {
 });
 
 // delete meal
-mealRouter.delete("/:id", async (req, res) => {
+mealRouter.delete("/:id", adminAuthenticator, async (req, res) => {
   try {
     let ID = req.params.id;
     let data = await Mealmodel.findByIdAndDelete({_id: ID});

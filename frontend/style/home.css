@@ -1,442 +1,691 @@
 main {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
 }
 
 /* poster */
 .poster {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 50px auto;
-    margin: 100px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px auto;
+  margin: 100px auto;
 }
-.poster>div:first-child {
-    margin: 20px;
-    width: 40%;
+.poster > div:first-child {
+  margin: 20px;
+  width: 40%;
 }
-.poster>div:first-child>p {
-    color: #485259;
-    font-size: 24px;
-    font-weight: 1000;
-    margin: 12px auto;
+.poster > div:first-child > p {
+  color: #485259;
+  font-size: 24px;
+  font-weight: 1000;
+  margin: 12px auto;
 }
-.poster>div:first-child>h1 {
-    color: #dd0031;
-    font-size: 50px;
-    line-height: 50px;
-    margin: 12px auto 40px auto;
+.poster > div:first-child > h1 {
+  color: #dd0031;
+  font-size: 50px;
+  line-height: 50px;
+  margin: 12px auto 40px auto;
 }
-.poster>div:first-child>button {
-    font-size: 13px;
-    margin: 10px auto;
-    padding: 14px 20px;
-    color: #fff;
-    background: linear-gradient(-180deg,rgba(254,67,108,.99),rgba(221,0,49,.99) 49%,#c20726);
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
+.poster > div:first-child > button {
+  font-size: 13px;
+  margin: 10px auto;
+  padding: 14px 20px;
+  color: #fff;
+  background: linear-gradient(
+    -180deg,
+    rgba(254, 67, 108, 0.99),
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726
+  );
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
 }
-.poster>div:first-child>button:hover {
-    background: linear-gradient(-180deg,rgba(221,0,49,.99) 49%,#c20726,rgba(254,67,108,.99));
+.poster > div:first-child > button:hover {
+  background: linear-gradient(
+    -180deg,
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726,
+    rgba(254, 67, 108, 0.99)
+  );
 }
-.poster>div:last-child {
-    width: 40%;
+.poster > div:last-child {
+  width: 40%;
 }
-.poster>div:last-child>img {
-    width: 100%;
+.poster > div:last-child > img {
+  width: 100%;
 }
 
 /* viewproduct */
 .viewproduct {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
 .customerfav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 49%;
-    background-color: #f4f8f9;
-    position: relative;
-    height: 350px;
-    border-radius: 20px;
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 49%;
+  background-color: #f4f8f9;
+  position: relative;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
 }
-.customerfav>div:first-child {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    padding: 20px;
-    height: 100%;
+.customerfav > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+  height: 100%;
 }
-.customerfav>div:last-child {
-    width: 50%;
-    overflow: hidden;
-    object-fit: cover;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
+.customerfav > div:last-child {
+  width: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
 }
-.customerfav>div:last-child>img {
-    height: 100%;
+.customerfav > div:last-child > img {
+  height: 100%;
 }
-.customerfav>div:first-child>div>h2 {
-    font-size: 14px;
-    color: #dd0031;
-    font-weight: 800;
-
+.customerfav > div:first-child > div > h2 {
+  font-size: 14px;
+  color: #dd0031;
+  font-weight: 800;
 }
-.customerfav>div:first-child>div>h1 {
-    font-size: 20x;
-    color: #004f71;
-    margin: 10px auto;
-    font-weight: 1000;
+.customerfav > div:first-child > div > h1 {
+  font-size: 20x;
+  color: #004f71;
+  margin: 10px auto;
+  font-weight: 1000;
 }
-.customerfav>div:first-child>div>p {
-    font-size: 14px;
+.customerfav > div:first-child > div > p {
+  font-size: 14px;
 }
-.customerfav>div:first-child>div>button {
-    font-size: 13px;
-    margin: 10px 0;
-    padding: 12px 16px;
-    color: #fff;
-    background: linear-gradient(-180deg,rgba(254,67,108,.99),rgba(221,0,49,.99) 49%,#c20726);
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
+.customerfav > div:first-child > div > button {
+  font-size: 13px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  color: #fff;
+  background: linear-gradient(
+    -180deg,
+    rgba(254, 67, 108, 0.99),
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726
+  );
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
-.customerfav>div:first-child>div>button:hover {
-    background: linear-gradient(-180deg,rgba(221,0,49,.99) 49%,#c20726,rgba(254,67,108,.99));
+.customerfav > div:first-child > div > button:hover {
+  background: linear-gradient(
+    -180deg,
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726,
+    rgba(254, 67, 108, 0.99)
+  );
 }
 
 /* hungry */
 .hungry {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f4f8f9;
-    position: relative;
-    height: 300px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f4f8f9;
+  position: relative;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 50px;
 }
-.hungry>div:first-child {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    width: 50%;
-    padding: 20px;
-    height: 100%;
+.hungry > div:first-child {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+  height: 100%;
 }
-.hungry>div:last-child {
-    overflow: hidden;
-    object-fit: cover;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 50%;
+.hungry > div:last-child {
+  overflow: hidden;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
 }
-.hungry>div:last-child>img {
-    height: 100%;
+.hungry > div:last-child > img {
+  height: 100%;
 }
-.hungry>div:first-child>h1 {
-    font-size: 20x;
-    color: #004f71;
-    margin: 10px auto;
-    font-weight: 1000;
+.hungry > div:first-child > h1 {
+  font-size: 20x;
+  color: #004f71;
+  margin: 10px auto;
+  font-weight: 1000;
 }
-.hungry>div:first-child>p {
-    font-size: 13px;
-    margin: 10px auto;
-    padding: 12px 16px;
-    color: #dd0031;
-    background-color: #fff;
-    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
+.hungry > div:first-child > p {
+  font-size: 13px;
+  margin: 10px auto;
+  padding: 12px 16px;
+  color: #dd0031;
+  background-color: #fff;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
-.hungry>div:first-child>p:hover {
-    box-shadow: 0 4px 6px 0 rgb(0 0 0 / 25%);
+.hungry > div:first-child > p:hover {
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 25%);
 }
 
 /* catering */
 .catering {
-    position: relative;
-    margin-bottom: 50px;
-    text-align: left;
+  position: relative;
+  margin-bottom: 50px;
+  text-align: left;
 }
-.catering>div:first-child>img {
-    width: 100%;
-    height: 350px;
-    border-radius: 20px;
+.catering > div:first-child > img {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
 }
-.catering>div:last-child {
-    width: 40%;
-    height: 80%;
-    position: absolute;
-    top: 10%;
-    left: 2%;
-    background-color: white;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    padding: 24px;
-    border-radius: 24px;
+.catering > div:last-child {
+  width: 40%;
+  height: 80%;
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 24px;
 }
-.catering>div:last-child>h1 {
-    font-size: 32px;
-    color: #004f71;
-    margin: 10px 0;
-    font-weight: 1000;
+.catering > div:last-child > h1 {
+  font-size: 32px;
+  color: #004f71;
+  margin: 10px 0;
+  font-weight: 1000;
 }
-.catering>div:last-child>p {
-    font-size: 14px;
+.catering > div:last-child > p {
+  font-size: 14px;
 }
-.catering>div:last-child>button {
-    font-size: 13px;
-    margin: 10px auto;
-    padding: 12px 16px;
-    color: #fff;
-    background: linear-gradient(-180deg,rgba(254,67,108,.99),rgba(221,0,49,.99) 49%,#c20726);
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
+.catering > div:last-child > button {
+  font-size: 13px;
+  margin: 10px auto;
+  padding: 12px 16px;
+  color: #fff;
+  background: linear-gradient(
+    -180deg,
+    rgba(254, 67, 108, 0.99),
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726
+  );
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
-.catering>div:last-child>button:hover {
-    background: linear-gradient(-180deg,rgba(221,0,49,.99) 49%,#c20726,rgba(254,67,108,.99));
+.catering > div:last-child > button:hover {
+  background: linear-gradient(
+    -180deg,
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726,
+    rgba(254, 67, 108, 0.99)
+  );
 }
 
 /* reward */
 .reward {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    height: 400px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 50px;
 }
-.reward>div:first-child {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 45%;
-    padding: 20px;
-    height: 100%;
-    align-items: baseline;
+.reward > div:first-child {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 45%;
+  padding: 20px;
+  height: 100%;
+  align-items: baseline;
 }
-.reward>div:first-child>h4 {
-    color: #dd0031;
-    font-weight: 1000;
+.reward > div:first-child > h4 {
+  color: #dd0031;
+  font-weight: 1000;
 }
-.reward>div:first-child>h1 {
-    font-size: 32px;
-    color: #004f71;
-    margin: 10px 0;
-    font-weight: 1000;
+.reward > div:first-child > h1 {
+  font-size: 32px;
+  color: #004f71;
+  margin: 10px 0;
+  font-weight: 1000;
 }
-.reward>div:first-child>p {
-    letter-spacing: 1px;
-    font-size: 14px;
+.reward > div:first-child > p {
+  letter-spacing: 1px;
+  font-size: 14px;
 }
-.reward>div:first-child>p:nth-child(4) {
-    font-size: 13px;
-    margin: 10px 0;
-    padding: 12px 16px;
-    color: #dd0031;
-    background-color: #fff;
-    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
+.reward > div:first-child > p:nth-child(4) {
+  font-size: 13px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  color: #dd0031;
+  background-color: #fff;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
-.reward>div:first-child>p:nth-child(4):hover {
-    box-shadow: 0 4px 6px 0 rgb(0 0 0 / 25%);
+.reward > div:first-child > p:nth-child(4):hover {
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 25%);
 }
-.reward>div:first-child>button {
-    font-size: 13px;
-    margin: 10px 0;
-    padding: 12px 16px;
-    color: #fff;
-    background: linear-gradient(-180deg,rgba(254,67,108,.99),rgba(221,0,49,.99) 49%,#c20726);
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
+.reward > div:first-child > button {
+  font-size: 13px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  color: #fff;
+  background: linear-gradient(
+    -180deg,
+    rgba(254, 67, 108, 0.99),
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726
+  );
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
-.reward>div:first-child>button:hover {
-    background: linear-gradient(-180deg,rgba(221,0,49,.99) 49%,#c20726,rgba(254,67,108,.99));
+.reward > div:first-child > button:hover {
+  background: linear-gradient(
+    -180deg,
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726,
+    rgba(254, 67, 108, 0.99)
+  );
 }
-.reward>div:last-child {
-    overflow: hidden;
-    object-fit: cover;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 50%;
+.reward > div:last-child {
+  overflow: hidden;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
 }
-.reward>div:last-child>img {
-    height: 100%;
-    width: 100%;
+.reward > div:last-child > img {
+  height: 100%;
+  width: 100%;
 }
 
 /* giftcard */
 .giftcard {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    height: 400px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 50px;
 }
-.giftcard>div:last-child {
-    position: absolute;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 45%;
-    padding: 20px;
-    height: 100%;
-    align-items: baseline;
+.giftcard > div:last-child {
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 45%;
+  padding: 20px;
+  height: 100%;
+  align-items: baseline;
 }
-.giftcard>div:last-child>h3 {
-    color: #dd0031;
-    font-weight: 1000;
+.giftcard > div:last-child > h3 {
+  color: #dd0031;
+  font-weight: 1000;
 }
-.giftcard>div:last-child>h1 {
-    font-size: 32px;
-    color: #004f71;
-    margin: 10px 0;
-    font-weight: 1000;
+.giftcard > div:last-child > h1 {
+  font-size: 32px;
+  color: #004f71;
+  margin: 10px 0;
+  font-weight: 1000;
 }
-.giftcard>div:last-child>p {
-    letter-spacing: 1px;
-    font-size: 14px;
+.giftcard > div:last-child > p {
+  letter-spacing: 1px;
+  font-size: 14px;
 }
-.giftcard>div:last-child>p:nth-child(4) {
-    font-size: 13px;
-    margin: 10px 0;
-    padding: 12px 16px;
-    color: #dd0031;
-    background-color: #fff;
-    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
+.giftcard > div:last-child > p:nth-child(4) {
+  font-size: 13px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  color: #dd0031;
+  background-color: #fff;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
-.giftcard>div:last-child>p:nth-child(4):hover {
-    box-shadow: 0 4px 6px 0 rgb(0 0 0 / 25%);
+.giftcard > div:last-child > p:nth-child(4):hover {
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 25%);
 }
-.giftcard>div:last-child>button {
-    font-size: 13px;
-    margin: 10px 0;
-    padding: 12px 16px;
-    color: #fff;
-    background: linear-gradient(-180deg,rgba(254,67,108,.99),rgba(221,0,49,.99) 49%,#c20726);
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
+.giftcard > div:last-child > button {
+  font-size: 13px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  color: #fff;
+  background: linear-gradient(
+    -180deg,
+    rgba(254, 67, 108, 0.99),
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726
+  );
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
-.giftcard>div:last-child>button:hover {
-    background: linear-gradient(-180deg,rgba(221,0,49,.99) 49%,#c20726,rgba(254,67,108,.99));
+.giftcard > div:last-child > button:hover {
+  background: linear-gradient(
+    -180deg,
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726,
+    rgba(254, 67, 108, 0.99)
+  );
 }
-.giftcard>div:first-child {
-    overflow: hidden;
-    object-fit: cover;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 50%;
+.giftcard > div:first-child {
+  overflow: hidden;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
 }
-.giftcard>div:first-child>img {
-    height: 100%;
-    width: 100%;
+.giftcard > div:first-child > img {
+  height: 100%;
+  width: 100%;
 }
 
 /* celebrate */
 .celebrate {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    height: 400px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 50px;
 }
-.celebrate>div:first-child {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 60%;
-    padding: 20px;
-    height: 100%;
-    align-items: baseline;
+.celebrate > div:first-child {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  padding: 20px;
+  height: 100%;
+  align-items: baseline;
 }
-.celebrate>div:first-child>h4 {
-    color: #dd0031;
-    font-weight: 1000;
+.celebrate > div:first-child > h4 {
+  color: #dd0031;
+  font-weight: 1000;
 }
-.celebrate>div:first-child>h1 {
-    font-size: 32px;
-    color: #004f71;
-    margin: 10px 0;
-    font-weight: 1000;
+.celebrate > div:first-child > h1 {
+  font-size: 32px;
+  color: #004f71;
+  margin: 10px 0;
+  font-weight: 1000;
 }
-.celebrate>div:first-child>p {
-    letter-spacing: 1px;
-    font-size: 14px;
+.celebrate > div:first-child > p {
+  letter-spacing: 1px;
+  font-size: 14px;
 }
-.reward>div:first-child>p:nth-child(4) {
-    font-size: 13px;
-    margin: 10px 0;
-    padding: 12px 16px;
-    color: #dd0031;
-    background-color: #fff;
-    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
+.reward > div:first-child > p:nth-child(4) {
+  font-size: 13px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  color: #dd0031;
+  background-color: #fff;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
-.celebrate>div:first-child>p:nth-child(4):hover {
-    box-shadow: 0 4px 6px 0 rgb(0 0 0 / 25%);
+.celebrate > div:first-child > p:nth-child(4):hover {
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 25%);
 }
-.celebrate>div:first-child>button {
-    font-size: 13px;
-    margin: 10px 0;
-    padding: 12px 16px;
-    color: #fff;
-    background: linear-gradient(-180deg,rgba(254,67,108,.99),rgba(221,0,49,.99) 49%,#c20726);
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
+.celebrate > div:first-child > button {
+  font-size: 13px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  color: #fff;
+  background: linear-gradient(
+    -180deg,
+    rgba(254, 67, 108, 0.99),
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726
+  );
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
-.celebrate>div:first-child>button:hover {
-    background: linear-gradient(-180deg,rgba(221,0,49,.99) 49%,#c20726,rgba(254,67,108,.99));
+.celebrate > div:first-child > button:hover {
+  background: linear-gradient(
+    -180deg,
+    rgba(221, 0, 49, 0.99) 49%,
+    #c20726,
+    rgba(254, 67, 108, 0.99)
+  );
 }
-.reward>div:last-child {
-    overflow: hidden;
-    object-fit: cover;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 50%;
+.reward > div:last-child {
+  overflow: hidden;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
 }
-.celebrate>div:last-child>img {
-    height: 100%;
-    width: 100%;
+.celebrate > div:last-child > img {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 360px) and (max-width: 960px) {
+  /* poster */
+  .poster {
+    padding: 20px auto;
+    margin: 50px auto;
+  }
+  .poster > div:first-child {
+    margin: 12px;
+    width: 40%;
+  }
+  .poster > div:first-child > p {
+    font-size: 16px;
+    margin: 6px auto;
+  }
+  .poster > div:first-child > h1 {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 6px auto 16px auto;
+  }
+  .poster > div:first-child > button {
+    font-size: 10px;
+    margin: 8px auto;
+    padding: 8px 10px;
+    border-radius: 16px;
+  }
+
+  /* viewproduct */
+  .viewproduct {
+    margin-bottom: 30px;
+  }
+  .customerfav {
+    height: 200px;
+    border-radius: 16px;
+  }
+  .customerfav > div:first-child {
+    padding: 12px;
+  }
+  .customerfav > div:first-child > div > h2 {
+    font-size: 10px;
+  }
+  .customerfav > div:first-child > div > h1 {
+    font-size: 10px;
+    margin: 6px auto;
+  }
+  .customerfav > div:first-child > div > p {
+    font-size: 10px;
+  }
+  .customerfav > div:first-child > div > button {
+    font-size: 10px;
+    margin: 6px 0;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+
+  /* hungry */
+  .hungry {
+    height: 200px;
+    margin-bottom: 30px;
+  }
+  .hungry > div:first-child {
+    padding: 16px;
+  }
+  .hungry > div:first-child > h1 {
+    font-size: 12px;
+    margin: 6px auto;
+  }
+  .hungry > div:first-child > p {
+    font-size: 10px;
+    margin: 8px auto;
+    padding: 8px 10px;
+    border-radius: 16px;
+  }
+
+  /* catering */
+  .catering {
+    margin-bottom: 30px;
+  }
+  .catering > div:first-child > img {
+    height: 200px;
+    border-radius: 16px;
+  }
+  .catering > div:last-child {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .catering > div:last-child > h1 {
+    font-size: 16px;
+    margin: 6px 0;
+  }
+  .catering > div:last-child > p {
+    font-size: 8px;
+  }
+  .catering > div:last-child > button {
+    font-size: 10px;
+    margin: 6px 0;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+
+  /* reward */
+  .reward {
+    height: 250px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+  }
+  .reward > div:first-child {
+    padding: 16px;
+  }
+  .reward > div:first-child > h1 {
+    font-size: 16px;
+    margin: 6px 0;
+  }
+  .reward > div:first-child > p {
+    letter-spacing: 0.25px;
+    font-size: 10px;
+  }
+  .reward > div:first-child > p:nth-child(4) {
+    font-size: 6px;
+    margin: 6px 0;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+  .reward > div:first-child > button {
+    font-size: 10px;
+    margin: 6px 0;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+
+  /* giftcard */
+  .giftcard {
+    height: 200px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+  }
+  .giftcard > div:last-child {
+    padding: 16px;
+  }
+  .giftcard > div:last-child > h1 {
+    font-size: 16px;
+    margin: 6px 0;
+  }
+  .giftcard > div:last-child > p {
+    letter-spacing: 0.25px;
+    font-size: 10px;
+  }
+  .giftcard > div:last-child > p:nth-child(4) {
+    font-size: 6px;
+    margin: 6px 0;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+  .giftcard > div:last-child > button {
+    font-size: 6px;
+    margin: 6px 0;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+
+  /* celebrate */
+  .celebrate {
+    height: 200px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+  }
+  .celebrate > div:first-child {
+    padding: 16px;
+  }
+  .celebrate > div:first-child > h1 {
+    font-size: 16px;
+    margin: 6px 0;
+  }
+  .celebrate > div:first-child > p {
+    letter-spacing: 0.25px;
+    font-size: 10px;
+  }
+  .reward > div:first-child > p:nth-child(4) {
+    font-size: 6px;
+    margin: 6px 0;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+  .celebrate > div:first-child > button {
+    font-size: 6px;
+    margin: 6px 0;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
 }

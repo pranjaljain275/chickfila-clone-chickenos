@@ -1,6 +1,6 @@
 const mealURL = "http://localhost:275/meals/";
 
-let accesstoken = localStorage.getItem("accesstokenAdmin") || null;
+let accesstoken = localStorage.getItem("accesstokenadmin") || null;
 
 let cartData = JSON.parse(localStorage.getItem("cartItem")) || [];
 
@@ -13,7 +13,7 @@ async function getData() {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${accesstoken}`,
+      // Authorization: `${accesstoken}`,
     },
   });
   let data = await res.json();
