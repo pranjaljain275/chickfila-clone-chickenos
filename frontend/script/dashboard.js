@@ -25,7 +25,7 @@ datatemp.addEventListener("change", (event) => {
 async function mealData(page_limit = 5, page_num = 1) {
   try {
     let alldata = await fetch(
-      `http://localhost:275/meals?page=${page_num}&limit=${page_limit}`,
+      `https://vast-gold-chinchilla-gown.cyclic.app/meals?page=${page_num}&limit=${page_limit}`,
       {
         method: "GET",
         headers: {
@@ -201,7 +201,7 @@ serbtn.addEventListener("change", (event) => {
 
 async function searchMeal(data) {
   try {
-    let showdata = await fetch(`http://localhost:275/meals?name=${data}`, {
+    let showdata = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals?name=${data}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -223,7 +223,7 @@ async function searchMeal(data) {
 
 async function deleteData(id, page) {
   try {
-    let delete_request = await fetch(`http://localhost:275/meals/${id}`, {
+    let delete_request = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

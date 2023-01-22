@@ -1,4 +1,4 @@
-let registerURL = "http://localhost:275/users/signup";
+let registerURL = "https://vast-gold-chinchilla-gown.cyclic.app/users/signup";
 
 let signup = document.querySelector("#signup_form");
 

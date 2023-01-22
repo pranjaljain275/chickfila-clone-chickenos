@@ -1,4 +1,4 @@
-const mealURL = "http://localhost:275/meals/";
+const mealURL = "https://vast-gold-chinchilla-gown.cyclic.app/meals";
 
 let accesstoken = localStorage.getItem("accesstokenadmin") || null;
 
