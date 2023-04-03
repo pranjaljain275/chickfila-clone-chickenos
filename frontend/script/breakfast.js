@@ -4,6 +4,8 @@ let accesstoken = localStorage.getItem("accesstokenadmin") || null;
 
 let cartData = JSON.parse(localStorage.getItem("cartItem")) || [];
 
+let loggedUserName = localStorage.getItem("loginname") || "";
+
 let products = document.querySelector(".products");
 
 let arr = [];
@@ -54,6 +56,11 @@ function renderData(allMeal) {
 }
 
 function addCart(elem, index) {
+  if(loggedUserName == ""){    
+    alert("Please login First");
+    window.location.href = "signin.html";
+    return;
+  }
   let res = cartData.find(function (item) {
     if (item.image === elem.image) {
       return true;

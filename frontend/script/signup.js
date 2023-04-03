@@ -19,7 +19,6 @@ async function signupFun(event) {
       phone,
       password,
     };
-    localStorage.setItem("loginname", userObj.name);
     
     let registerReq = await fetch(registerURL, {
       method: "POST",

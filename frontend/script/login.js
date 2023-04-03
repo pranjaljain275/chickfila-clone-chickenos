@@ -25,10 +25,11 @@ async function loginFun(event) {
 
     if (loginReq.ok == true) {
       let res = await loginReq.json();
-      let token = res.token;
-      localStorage.setItem("accesstokenUser", token);
+      console.log(res);
+      localStorage.setItem("accesstokenUser", res.token);
+      localStorage.setItem("loginname", res.name);
       alert("Login Succesfull");
-      window.location.href = "index.html";
+      // window.location.href = "index.html";
     } else {
       alert("User not found");
     }
