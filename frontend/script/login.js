@@ -29,7 +29,7 @@ async function loginFun(event) {
       localStorage.setItem("accesstokenUser", res.token);
       localStorage.setItem("loginname", res.name);
       alert("Login Succesfull");
-      // window.location.href = "index.html";
+      window.location.href = "index.html";
     } else {
       alert("User not found");
     }
