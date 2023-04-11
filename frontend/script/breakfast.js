@@ -70,6 +70,7 @@ function addCart(elem, index) {
   if (!res == true) {
     cartData.push(elem);
     localStorage.setItem("cartItem", JSON.stringify(cartData));
+    alert("Item Added to the cart");
   } else {
     alert("Item already exist in the cart");
   }
@@ -82,11 +83,3 @@ function search() {
   });
   renderData(searchData);
 }
-
-//logged name
-// let accData = JSON.parse(localStorage.getItem("accdata")) || [];
-// console.log(accData)
-
-// if(accData[0] != undefined) {
-//   document.querySelector("#logged").textContent = `HI! ${accData[0].fname}`;
-// }
