@@ -9,7 +9,7 @@ function myFunction() {
 
 let accesstokenAdmin = localStorage.getItem("accesstokenadmin");
 let dataId = localStorage.getItem("editId") || null;
-console.log(dataId)
+// console.log(dataId)
 
 if (dataId == null) {
   let edit_form = document.querySelector(".form_of_editing");
@@ -122,10 +122,10 @@ async function editData(id) {
     let edit_data = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals/${id}`);
     if (edit_data.ok) {
       let temp = await edit_data.json();
-      console.log(temp);
+      // console.log(temp);
       showdata(temp[0]);
     } else {
-      console.log("something went wrong");
+      alert("something went wrong");
     }
   } catch (error) {
     alert("edit data");
@@ -133,7 +133,7 @@ async function editData(id) {
 }
 
 function showdata(data) {
-  console.log(data);
+  // console.log(data);
   let cname = document.querySelector("#company_name");
   cname.value = data["name"];
   cname.readOnly = true;
