@@ -37,5 +37,5 @@ Chick-fil-A is a food delivery website where you can order food mostly based on 
 
 ## Deployment
 
- - Backend: https://vast-gold-chinchilla-gown.cyclic.app 
+ - Backend: https://chickenos-chickfila-be.onrender.com
  - Frontend: https://chickenos-chikfilla-nxm101-275.netlify.app
