@@ -1,4 +1,4 @@
-let loginURL = "http://localhost:2750/users/login";
+let loginURL = "https://chickenos-chickfila-be.onrender.com/users/login";
 
 let login = document.querySelector("#login_form");
 

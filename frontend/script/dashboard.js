@@ -25,7 +25,7 @@ datatemp.addEventListener("change", (event) => {
 async function mealData(page_limit = 5, page_num = 1) {
   try {
     let alldata = await fetch(
-      `http://localhost:2750/meals?page=${page_num}&limit=${page_limit}`,
+      `https://chickenos-chickfila-be.onrender.com/meals?page=${page_num}&limit=${page_limit}`,
       {
         method: "GET",
         headers: {
@@ -196,7 +196,7 @@ serbtn.addEventListener("change", (event) => {
 
 async function searchMeal(data) {
   try {
-    let showdata = await fetch(`http://localhost:2750/meals?name=${data}`, {
+    let showdata = await fetch(`https://chickenos-chickfila-be.onrender.com/meals?name=${data}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -217,7 +217,7 @@ async function searchMeal(data) {
 
 async function deleteData(id, page) {
   try {
-    let delete_request = await fetch(`http://localhost:2750/meals/${id}`, {
+    let delete_request = await fetch(`https://chickenos-chickfila-be.onrender.com/meals/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

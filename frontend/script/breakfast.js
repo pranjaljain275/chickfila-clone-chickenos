@@ -1,5 +1,5 @@
-const mealURL = "http://localhost:2750/meals";
-const cartURL = "http://localhost:2750/cart/";
+const mealURL = "https://chickenos-chickfila-be.onrender.com/meals";
+const cartURL = "https://chickenos-chickfila-be.onrender.com/cart/";
 
 let accesstokenAdmin = localStorage.getItem("accesstokenadmin") || null;
 let accesstokenUser = localStorage.getItem("accesstokenUser") || null;

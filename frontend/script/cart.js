@@ -1,4 +1,4 @@
-const cartURL = "http://localhost:2750/cart/";
+const cartURL = "https://chickenos-chickfila-be.onrender.com/cart/";
 
 let allCartData=[];
 let totalPrice;

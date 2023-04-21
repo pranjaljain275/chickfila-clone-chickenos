@@ -1,4 +1,4 @@
-let registerURL = "http://localhost:2750/users/signup";
+let registerURL = "https://chickenos-chickfila-be.onrender.com/users/signup";
 
 let signup = document.querySelector("#signup_form");
 
