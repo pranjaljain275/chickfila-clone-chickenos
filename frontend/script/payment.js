@@ -1,3 +1,7 @@
+const cartURL = "http://localhost:2750/cart/";
+
+let accesstokenUser = localStorage.getItem("accesstokenUser") || null;
+
 let paymentTotal = localStorage.getItem("amount") || 0;
 document.querySelector("#paymenttotal").textContent = paymentTotal;
 
@@ -23,8 +27,19 @@ document.querySelector(".close").addEventListener("click", function () {
   otp.classList.remove("active");
 });
 
-// enter otp
-let cartData = JSON.parse(localStorage.getItem("cartItem")) || [];
+// Get cart itemCount
+let getCartData = async () => {
+  let res = await fetch(cartURL, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `${accesstokenUser}`,
+    },
+  });
+  if (res.ok == true) {
+    let data = await res.json();
+  }
+};
 
 document.querySelector("form").addEventListener("submit", enterOtpFunc);
 
@@ -36,8 +51,6 @@ function enterOtpFunc(event) {
   if (otpassword == "1234") {
     alert("Payment successful: !Order Placed.");
     otp = document.querySelector(".otp");
-    cartData = null;
-    localStorage.setItem("cartItem", JSON.stringify(cartData));
     setTimeout(()=>{
       window.location.href = "index.html";
     },1500)

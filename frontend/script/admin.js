@@ -1,4 +1,4 @@
-let loginURL = "https://vast-gold-chinchilla-gown.cyclic.app/employees/login";
+let loginURL = "http://localhost:2750/employees/login";
 
 let login = document.querySelector("#emploginform");
 

@@ -68,8 +68,8 @@ header.innerHTML = `
   </div>
 
   <div>
-    <p><a id="signname" href="signup.html">Sign Up</a></p>
-    <p><a id="signadmin" href="admin.html">Employeer Login</a></p>
+    <p><a id="signname" href="signin.html">User Login</a></p>
+    <p><a id="signadmin" href="admin.html">Admin Login</a></p>
     <button id="logout">Logout</button>
     <button id="cart">Order food</button>
     <p><i class="fa-solid fa-magnifying-glass"></i></p>
@@ -150,13 +150,14 @@ document.querySelector(".top>i").addEventListener("click", () => {
 });
 
 //Logged name
-let username = localStorage.getItem("loginname") || "Sign Up";
+let username = localStorage.getItem("loginname") || "User Login";
 
 let signuser = document.getElementById("signname");
 signuser.innerHTML = username;
 
-//Logged name
-let empusername = localStorage.getItem("emploginname") || "Employeer Login";
+//Logged admin name
+let empusername = localStorage.getItem("emploginname") || "Admin Login";
+
 let signemp = document.getElementById("signadmin");
 signemp.innerText = empusername;
 
@@ -168,7 +169,7 @@ cartPage.addEventListener("click", ()=> {
 
 // Logout
 let logout = document.getElementById("logout");
-if(username != "Sign Up") {
+if(username != "User Login") {
   logout.style.display = "block";
 }else {
   logout.style.display = "none";
@@ -178,5 +179,6 @@ logout.addEventListener("click", ()=>{
   localStorage.removeItem("loginname");
   setTimeout(()=>{
     window.location.href = "index.html";
+    localStorage.removeItem("accesstokenUser");
   },1000);
 })

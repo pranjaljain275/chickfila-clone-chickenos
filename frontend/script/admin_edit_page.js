@@ -88,7 +88,7 @@ if (dataId == null) {
 
 async function addtoserver(obj) {
   try {
-    let add_data = await fetch("https://vast-gold-chinchilla-gown.cyclic.app/meals/create", {
+    let add_data = await fetch("http://localhost:2750/meals/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -119,7 +119,7 @@ window.addEventListener("load", () => {
 
 async function editData(id) {
   try {
-    let edit_data = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals/${id}`);
+    let edit_data = await fetch(`http://localhost:2750/meals/${id}`);
     if (edit_data.ok) {
       let temp = await edit_data.json();
       // console.log(temp);
@@ -188,7 +188,7 @@ if (dataId != null) {
 
 async function finalData(obj) {
   try {
-    let edit_fetch = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals/${dataId}`, {
+    let edit_fetch = await fetch(`http://localhost:2750/meals/${dataId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -294,7 +294,7 @@ async function finalData(obj) {
 
 // async function addtoserver(obj) {
 //   try {
-//     let add_data = await fetch("https://vast-gold-chinchilla-gown.cyclic.app/meals/create", {
+//     let add_data = await fetch("http://localhost:2750/meals/create", {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -325,7 +325,7 @@ async function finalData(obj) {
 
 // async function editData(id) {
 //   try {
-//     let edit_data = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals/${id}`);
+//     let edit_data = await fetch(`http://localhost:2750/meals/${id}`);
 //     if (edit_data.ok) {
 //       let temp = await edit_data.json();
 //       showdata(temp);
@@ -391,7 +391,7 @@ async function finalData(obj) {
 
 // async function finalData(obj) {
 //   try {
-//     let edit_fetch = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals/${dataId}`, {
+//     let edit_fetch = await fetch(`http://localhost:2750/meals/${dataId}`, {
 //       method: "PUT",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -497,7 +497,7 @@ async function finalData(obj) {
 
 // async function addtoserver(obj) {
 //   try {
-//     let add_data = await fetch("https://vast-gold-chinchilla-gown.cyclic.app/meals/create", {
+//     let add_data = await fetch("http://localhost:2750/meals/create", {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -528,7 +528,7 @@ async function finalData(obj) {
 
 // async function editData(id) {
 //   try {
-//     let edit_data = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals/${id}`);
+//     let edit_data = await fetch(`http://localhost:2750/meals/${id}`);
 //     if (edit_data.ok) {
 //       let temp = await edit_data.json();
 //       showdata(temp);
@@ -594,7 +594,7 @@ async function finalData(obj) {
 
 // async function finalData(obj) {
 //   try {
-//     let edit_fetch = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals/${dataId}`, {
+//     let edit_fetch = await fetch(`http://localhost:2750/meals/${dataId}`, {
 //       method: "PUT",
 //       headers: {
 //         "Content-Type": "application/json",

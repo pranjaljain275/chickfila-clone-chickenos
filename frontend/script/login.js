@@ -1,4 +1,4 @@
-let loginURL = "https://vast-gold-chinchilla-gown.cyclic.app/users/login";
+let loginURL = "http://localhost:2750/users/login";
 
 let login = document.querySelector("#login_form");
 
@@ -27,7 +27,7 @@ async function loginFun(event) {
       let res = await loginReq.json();
       console.log(res);
       localStorage.setItem("accesstokenUser", res.token);
-      localStorage.setItem("loginname", res.name);
+      localStorage.setItem("loginname", res.name.split(" ")[0]);
       alert("Login Succesfull");
       window.location.href = "index.html";
     } else {

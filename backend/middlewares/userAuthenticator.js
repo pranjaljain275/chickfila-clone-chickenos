@@ -6,6 +6,8 @@ const userAuthenticator = (req, res, next) => {
   if (token) {
     const decoded = jwt.verify(token, process.env.key1);
     if (decoded) {
+      const userId = decoded.userId;
+      req.body.userId = userId;
       next();
     } else {
       res.send("Login First");

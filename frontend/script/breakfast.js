@@ -1,8 +1,10 @@
-const mealURL = "https://vast-gold-chinchilla-gown.cyclic.app/meals";
+const mealURL = "http://localhost:2750/meals";
+const cartURL = "http://localhost:2750/cart/";
 
-let accesstoken = localStorage.getItem("accesstokenadmin") || null;
+let accesstokenAdmin = localStorage.getItem("accesstokenadmin") || null;
+let accesstokenUser = localStorage.getItem("accesstokenUser") || null;
 
-let cartData = JSON.parse(localStorage.getItem("cartItem")) || [];
+// let cartData = JSON.parse(localStorage.getItem("cartItem")) || [];
 
 let loggedUserName = localStorage.getItem("loginname") || "";
 
@@ -10,33 +12,35 @@ let products = document.querySelector(".products");
 
 let arr = [];
 
-async function getData() {
+// Get Meal Data
+async function getMealData() {
   let res = await fetch(mealURL, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `${accesstoken}`,
     },
   });
-  let data = await res.json();
-  arr = data;
-  renderData(data);
+  if (res.ok == true) {
+    let data = await res.json();
+    arr = data;
+    renderData(data);
+  }
 }
+getMealData();
 
-getData();
-
+// Render Meal data
 function renderData(allMeal) {
   products.innerHTML = "";
 
-  allMeal.forEach((elem,index) => {
+  allMeal.forEach((elem, index) => {
     let div = document.createElement("div");
 
     let image = document.createElement("img");
     image.setAttribute("src", elem.image);
-    
+
     let name = document.createElement("h2");
     name.textContent = elem.name;
-    
+
     let quantity = document.createElement("p");
     quantity.textContent = elem.quantity;
 
@@ -55,27 +59,58 @@ function renderData(allMeal) {
   });
 }
 
+// Add cart data
+let addCartData = async (elem) => {
+  let res = await fetch(`${cartURL}/create`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `${accesstokenUser}`,
+    },
+    body: JSON.stringify(elem),
+  });
+
+  if (res.ok == true) {
+    alert("Item Added to the cart");
+  }
+};
+
+// Get cart data
+let getCartData = async () => {
+  let res = await fetch(cartURL, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `${accesstokenUser}`,
+    },
+  });
+  let data = await res.json();
+  return data;
+};
+
 function addCart(elem, index) {
-  if(loggedUserName == ""){    
+  if (loggedUserName == "") {
     alert("Please login First");
     window.location.href = "signin.html";
     return;
   }
-  let res = cartData.find(function (item) {
-    if (item.image === elem.image) {
-      return true;
+
+  getCartData().then((data) => {
+    let res = data.find(function (item) {
+      if (item.image === elem.image) {
+        return true;
+      }
+    });
+    
+    if (!res == true) {
+      addCartData(elem);
+    } else {
+      alert("Item already exist in the cart");
     }
   });
-
-  if (!res == true) {
-    cartData.push(elem);
-    localStorage.setItem("cartItem", JSON.stringify(cartData));
-    alert("Item Added to the cart");
-  } else {
-    alert("Item already exist in the cart");
-  }
 }
 
+// Search Meal
 function search() {
   let input = document.querySelector("#search").value;
   let searchData = arr.filter(function (elem) {

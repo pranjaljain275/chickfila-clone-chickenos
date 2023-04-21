@@ -25,12 +25,11 @@ datatemp.addEventListener("change", (event) => {
 async function mealData(page_limit = 5, page_num = 1) {
   try {
     let alldata = await fetch(
-      `https://vast-gold-chinchilla-gown.cyclic.app/meals?page=${page_num}&limit=${page_limit}`,
+      `http://localhost:2750/meals?page=${page_num}&limit=${page_limit}`,
       {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          // Authorization: `${accesstokenAdmin}`,
         },
       }
     );
@@ -71,7 +70,6 @@ function renderMeal(data) {
   let tabelCont = document.querySelector(".maincontainer");
   let tabelhead = document.querySelector(".comp_tbl_head");
   tabelhead.innerHTML = `
-  
         <div class="comp_logo">
            <h4>Image</h4>
         </div>
@@ -90,7 +88,6 @@ function renderMeal(data) {
         <div class="delet_sec">
             <h4>Delete Data</h4>
         </div>
-       
   `;
   tabelCont.innerHTML = "";
   let newdata = data.map((item) => {
@@ -141,7 +138,6 @@ function renderUser(data) {
   let tabelCont = document.querySelector(".maincontainer");
   let tabelhead = document.querySelector(".comp_tbl_head");
   tabelhead.innerHTML = `
-    
     <div class="profile_pic">
         <h4>Profile</h4>
     </div>
@@ -156,8 +152,7 @@ function renderUser(data) {
     </div>
     <div class="date">
         <h4>Created Date</h4>
-    </div>
-         
+    </div>     
     `;
   tabelCont.innerHTML = "";
   let newdata = data.map((item) => {
@@ -201,11 +196,10 @@ serbtn.addEventListener("change", (event) => {
 
 async function searchMeal(data) {
   try {
-    let showdata = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals?name=${data}`, {
+    let showdata = await fetch(`http://localhost:2750/meals?name=${data}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `${accesstokenAdmin}`,
       },
     });
     if (showdata.ok) {
@@ -223,7 +217,7 @@ async function searchMeal(data) {
 
 async function deleteData(id, page) {
   try {
-    let delete_request = await fetch(`https://vast-gold-chinchilla-gown.cyclic.app/meals/${id}`, {
+    let delete_request = await fetch(`http://localhost:2750/meals/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

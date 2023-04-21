@@ -1,15 +1,41 @@
-let cartData = JSON.parse(localStorage.getItem("cartItem")) || [];
+const cartURL = "http://localhost:2750/cart/";
 
-let totalPrice = cartData.reduce((acc, elem) => {
-  return acc + +elem.price;
-}, 0);
-document.querySelector("#amount").textContent = totalPrice;
-localStorage.setItem("amount", totalPrice);
+let allCartData=[];
+let totalPrice;
+let totalItem;
 
-let totalItem = +cartData.length;
-document.querySelector("#totalItem").textContent = totalItem;
+let accesstokenUser = localStorage.getItem("accesstokenUser") || null;
 
-function mealData(cartData) {
+// Get cart data
+let getCartData = async () => {
+  let res = await fetch(cartURL, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `${accesstokenUser}`,
+    },
+  });
+  if (res.ok == true) {
+    let data = await res.json();
+    allCartData = [...data];
+    // console.log(allCartData);
+
+    totalPrice = data.reduce((acc, elem) => {
+      return acc + +elem.price;
+    }, 0);
+    document.querySelector("#amount").textContent = totalPrice;
+    localStorage.setItem("amount", totalPrice);
+    totalItem = +data.length;
+    document.querySelector("#totalItem").textContent = totalItem;
+
+    renderCartMeal(data);
+    // return data;
+  }
+};
+getCartData();
+
+// Render cart Data
+function renderCartMeal(cartData) {
   document.querySelector("#container").innerHTML = null;
 
   cartData.forEach((elem, index) => {
@@ -17,32 +43,27 @@ function mealData(cartData) {
 
     let image = document.createElement("img");
     image.setAttribute("src", elem.image);
-    
+
     let name = document.createElement("h2");
     name.textContent = elem.name;
-    
+
     let quantity = document.createElement("div");
     quantity.setAttribute("id", "quant");
+
+    let numQuant = document.createElement("h2");
+    numQuant.textContent = elem.quant;
 
     let minusBtn = document.createElement("span");
     minusBtn.textContent = " - ";
     minusBtn.addEventListener("click", function () {
-      numQuant.textContent = +numQuant.textContent - 1;
-      price.textContent = numQuant.textContent * elem.price;
-      if (numQuant.textContent == 0) {
-        cartData.splice(index, 1);
-        localStorage.setItem("cartItem", JSON.stringify(cartData));
-        mealData(cartData);
-        totalItem--;
-        document.querySelector("#totalItem").textContent = totalItem;
-        document.querySelector(".itemCart").textContent = totalItem;
+      if (numQuant.textContent > 1) {
+        numQuant.textContent = +numQuant.textContent - 1;
       }
+      price.textContent = numQuant.textContent * elem.price;
       totalPrice = totalPrice - elem.price;
       document.querySelector("#amount").textContent = totalPrice;
+      localStorage.setItem("amount", totalPrice);
     });
-
-    let numQuant = document.createElement("h2");
-    numQuant.textContent = "1";
 
     let plusBtn = document.createElement("span");
     plusBtn.textContent = " + ";
@@ -51,6 +72,7 @@ function mealData(cartData) {
       price.textContent = numQuant.textContent * elem.price;
       totalPrice = totalPrice + elem.price;
       document.querySelector("#amount").textContent = totalPrice;
+      localStorage.setItem("amount", totalPrice);
     });
 
     quantity.append(minusBtn, numQuant, plusBtn);
@@ -69,20 +91,40 @@ function mealData(cartData) {
     document.getElementById("container").append(div);
   });
 }
-mealData(cartData);
+
+// delete cart data
+let deleteCartData = async (elem) => {
+  let res = await fetch(`${cartURL}/${elem._id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `${accesstokenUser}`,
+    },
+  });
+  let msg = res.text();
+  return msg;
+};
 
 // delete item in cart
 function deleteCart(elem, price, index) {
-  cartData.splice(index, 1);
-  localStorage.setItem("cartItem", JSON.stringify(cartData));
+  deleteCartData(elem).then((data)=>{
+    console.log(data);
+  });
+  let dataAfterDelete = allCartData.filter((el)=>{
+    return el._id != elem._id;
+  });
+  allCartData=dataAfterDelete;
 
-  totalPrice = totalPrice - Number(price);
+  totalPrice = allCartData.reduce((acc, e) => {
+    return acc + +e.price;
+  }, 0); 
   document.querySelector("#amount").textContent = totalPrice;
+  localStorage.setItem("amount", totalPrice);
 
-  totalItem--;
+  totalItem=allCartData.length;
   document.querySelector("#totalItem").textContent = totalItem;
 
-  mealData(cartData);
+  renderCartMeal(allCartData);
 }
 
 document.getElementById("checkout").addEventListener("click", () => {

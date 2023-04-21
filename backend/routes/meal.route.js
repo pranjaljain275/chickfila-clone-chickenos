@@ -12,7 +12,7 @@ mealRouter.post("/create", adminAuthenticator, async (req, res) => {
     const data = req.body;
     const meals = new Mealmodel(data);
     await meals.save();
-    response.send(meals);
+    res.send(meals);
     console.log("Meal Added");
   } catch (error) {
     console.log(error);
@@ -23,17 +23,29 @@ mealRouter.post("/create", adminAuthenticator, async (req, res) => {
 // all meal
 mealRouter.get("/", async (req, res) => {
   try {
-    let { name, limit, page } = req.query;
+    let { name, limit, page, sort, order } = req.query;
     let queries = {};
     if (name == undefined) {
       queries = {};
     } else {
-      queries.name = { '$regex': name, '$options': 'i' };
+      queries.name = { $regex: name, $options: "i" };
+    }
+    // sort
+    let sorting = {};
+    if (sort != undefined) {
+      if (order == "desc") {
+        sorting[sort] = -1;
+      } else {
+        sorting[sort] = 1;
+      }
     }
     // pagination
     let pageNo = (page - 1) * limit;
-    const movies = await Mealmodel.find(queries).skip(pageNo).limit(limit);
-    res.send(movies);
+    const data = await Mealmodel.find(queries)
+      .sort(sorting)
+      .skip(pageNo)
+      .limit(limit);
+    res.send(data);
   } catch (error) {
     console.log(error);
     res.send({ err: "Something went wrong" });
@@ -44,7 +56,7 @@ mealRouter.get("/", async (req, res) => {
 mealRouter.get("/:id", async (req, res) => {
   try {
     let ID = req.params.id;
-    let data = await Mealmodel.find({_id: ID});
+    let data = await Mealmodel.find({ _id: ID });
     res.send(data);
   } catch (error) {
     console.log(error);
@@ -57,7 +69,7 @@ mealRouter.put("/:id", adminAuthenticator, async (req, res) => {
   try {
     let ID = req.params.id;
     let updateTo = req.body;
-    let data = await Mealmodel.findByIdAndUpdate({_id: ID}, updateTo);
+    let data = await Mealmodel.findByIdAndUpdate({ _id: ID }, updateTo);
     res.send(`Data of a user whose Id ${ID} is updated`);
   } catch (error) {
     console.log(error);
@@ -69,7 +81,7 @@ mealRouter.put("/:id", adminAuthenticator, async (req, res) => {
 mealRouter.delete("/:id", adminAuthenticator, async (req, res) => {
   try {
     let ID = req.params.id;
-    let data = await Mealmodel.findByIdAndDelete({_id: ID});
+    let data = await Mealmodel.findByIdAndDelete({ _id: ID });
     res.send(`Data of a user whose Id ${ID} is deleted`);
   } catch (error) {
     console.log(error);

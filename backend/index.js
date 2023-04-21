@@ -8,6 +8,7 @@ const { connection } = require("./config/db");
 const { mealRouter } = require("./routes/meal.route");
 const { userRouter } = require("./routes/user.route");
 const { employeeRouter } = require("./routes/admin.route");
+const { cartRouter } = require("./routes/cart.route");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use("/employees", employeeRouter);
 // app.use(adminAuthenticator);
 app.use("/meals", mealRouter);
 // app.use(userAuthenticator);
+app.use("/cart", cartRouter);
 
 app.get("/", (req, res) => {
   res.send("WELCOME to CHICKENOS");

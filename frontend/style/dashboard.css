@@ -7,6 +7,10 @@ body button:hover{
 .topnav {
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
 }
 
 .topnav a {
@@ -80,6 +84,20 @@ body button:hover{
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+#logout {
+    font-size: 16px;
+    margin: auto 10px;
+    padding: 8px 14px;
+    color: #fff;
+    background: linear-gradient(-180deg,rgba(254,67,108,.99),rgba(221,0,49,.99) 49%,#c20726);
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    /* display: none; */
+}
+#logout:hover {
+    background: linear-gradient(-180deg,rgba(221,0,49,.99) 49%,#c20726,rgba(254,67,108,.99));
 }
 
 @media screen and (max-width:600px) {
@@ -324,7 +342,7 @@ text-align: center;
     background-color:#dd0031 ;
 }
 #edit_pge_btn:hover,body button:hover{
-    background-color:rgb(93, 129, 228) ;
+    background-color:rgb(10, 70, 234) ;
 }
 .form_of_editing{
     width: 35%;
@@ -369,7 +387,7 @@ text-align: center;
     border-radius: 8px;
 }
 .submit_btn div button:hover{
-    background-color: rgb(93, 129, 228);
+    background-color: rgb(10, 70, 234);
 }
 #cancel a{
     color: white;
